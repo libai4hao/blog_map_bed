@@ -25,9 +25,4 @@ jobs:
           MERGE_RETRIES: "2"
           MERGE_RETRY_SLEEP: "10000"
           UPDATE_METHOD: "rebase"
-    - name: Push to gitee
-      run: |
-        git switch -c master
-        git remote add gitee git@gitee.com:libai4hao/my_blog_map_bed.git
-        imgbot=`git rev-parse HEAD | git show -s --format='%ae' | grep imgbot` || echo "no imgbot"
-        [[ ! -z "$imgbot" ]] && git push --set-upstream gitee master -f || echo "Ingore push"
+
